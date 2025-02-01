@@ -81,13 +81,13 @@ void loop() {
   delay(1000);
   ///////////////////////// SD CARD CODE //////////////////////
    // make a string for assembling the data to log:
-  String dataString = "Hello World!";
+  String dataString = (String)temp + "," + (String)press + "," + (String)humid;
 
 
 
   // open the file. note that only one file can be open at a time,
   // so you have to close this one before opening another.
-  File dataFile = SD.open("datalog.txt", FILE_WRITE);
+  File dataFile = SD.open("datalog.csv", FILE_WRITE);
 
   // if the file is available, write to it:
   if (dataFile) {
